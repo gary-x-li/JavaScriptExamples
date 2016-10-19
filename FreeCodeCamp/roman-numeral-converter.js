@@ -31,5 +31,67 @@ convertToRoman(3999) should return "MMMCMXCIX"
 */
 
 function convertToRoman(num) {
+  if (num > 3999 || num < 1) {
+    return 'Not supported';
+  }
+
+  var arr = num.toString().split('');
+  var ones = arr.pop();
+  var tens = arr.pop();
+  var hundreds = arr.pop();
+  var thousands = arr.pop();
+
+  var result = '';
+
+  if (thousands !== undefined) {
+    switch (thousands) {
+      case '1':
+        result.concat('M');
+        break;
+      case '2':
+        result.concat('MM');
+        break;
+      case '3':
+        result.concat('MMM');
+        break;
+      default:
+
+    }
+  }
+
+  if (hundreds !== undefined) {
+    switch (hundreds) {
+      case '1':
+        result.concat('C');
+        break;
+      case '2':
+        result.concat('CC');
+        break;
+      case '3':
+        result.concat('CCC');
+        break;
+      case '4':
+        result.concat('CD');
+        break;
+      case '5':
+        result.concat('D');
+        break;
+      case '6':
+        result.concat('DC');
+        break;
+      case '7':
+        result.concat('DCC');
+        break;
+      case '8':
+        result.concat('DCCC');
+        break;
+      case '9':
+        result.concat('CM');
+        break;
+      default:
+
+    }
+  }
+
   return num;
 }
