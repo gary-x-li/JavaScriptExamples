@@ -46,13 +46,13 @@ function convertToRoman(num) {
   if (thousands !== undefined) {
     switch (thousands) {
       case '1':
-        result.concat('M');
+        result = result.concat('M');
         break;
       case '2':
-        result.concat('MM');
+        result = result.concat('MM');
         break;
       case '3':
-        result.concat('MMM');
+        result = result.concat('MMM');
         break;
       default:
 
@@ -62,36 +62,104 @@ function convertToRoman(num) {
   if (hundreds !== undefined) {
     switch (hundreds) {
       case '1':
-        result.concat('C');
+        result = result.concat('C');
         break;
       case '2':
-        result.concat('CC');
+        result = result.concat('CC');
         break;
       case '3':
-        result.concat('CCC');
+        result = result.concat('CCC');
         break;
       case '4':
-        result.concat('CD');
+        result = result.concat('CD');
         break;
       case '5':
-        result.concat('D');
+        result = result.concat('D');
         break;
       case '6':
-        result.concat('DC');
+        result = result.concat('DC');
         break;
       case '7':
-        result.concat('DCC');
+        result = result.concat('DCC');
         break;
       case '8':
-        result.concat('DCCC');
+        result = result.concat('DCCC');
         break;
       case '9':
-        result.concat('CM');
+        result = result.concat('CM');
         break;
       default:
 
     }
   }
 
-  return num;
+  if (tens !== undefined) {
+    switch (tens) {
+      case '1':
+        result = result.concat('X');
+        break;
+      case '2':
+        result = result.concat('XX');
+        break;
+      case '3':
+        result = result.concat('XXX');
+        break;
+      case '4':
+        result = result.concat('XL');
+        break;
+      case '5':
+        result = result.concat('L');
+        break;
+      case '6':
+        result = result.concat('LX');
+        break;
+      case '7':
+        result = result.concat('LXX');
+        break;
+      case '8':
+        result = result.concat('LXXX');
+        break;
+      case '9':
+        result = result.concat('XC');
+        break;
+      default:
+
+    }
+  }
+
+  if (ones !== undefined) {
+    switch (ones) {
+      case '1':
+        result = result.concat('I');
+        break;
+      case '2':
+        result = result.concat('II');
+        break;
+      case '3':
+        result = result.concat('III');
+        break;
+      case '4':
+        result = result.concat('IV');
+        break;
+      case '5':
+        result = result.concat('V');
+        break;
+      case '6':
+        result = result.concat('VI');
+        break;
+      case '7':
+        result = result.concat('VII');
+        break;
+      case '8':
+        result = result.concat('VIII');
+        break;
+      case '9':
+        result = result.concat('IX');
+        break;
+      default:
+
+    }
+  }
+
+  return result;
 }
