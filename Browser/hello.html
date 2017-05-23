@@ -8,22 +8,26 @@
 </head>
 <body>
   <script>
-    function forEach(list, callback) {
-      for (var n = 0; n < list.length; n++) {
-        callback.call(list[n], n);
-        //callback(n);
+  (function () {
+    "use strict";
+    // put all of your strict code here
+    var p1 = {
+      name: "John",
+      changeName: function(newName) {
+        console.log("Inside changeName: " + name);
+        console.log(window.name === name);
+        name = newName;
       }
-    }
+    };
 
-    var weapons = [{ type:'shuriken'},
-                   { type:'katana'},
-                   { type:'nunchucks'}];
+    console.log(p1.name);
+    p1.changeName("Kobe");
+    console.log(p1.name);
+    console.log(window.name === name);
 
-    forEach(weapons, function(index){
-        console.log(this);
-        assert(this === weapons[index],
-              "Got the expected object of " + weapons[index].type);
-    });
+  }());
+
+
   </script>
 </body>
 </html>
